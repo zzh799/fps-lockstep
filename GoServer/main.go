@@ -9,14 +9,14 @@ import (
 )
 
 func main() {
-	fmt.Println("kcp listens on 10000")
-	lis, err := kcp.ListenWithOptions(":10000", nil, 10, 3) //监听1000端口
+	fmt.Println("kcp listens on 13145")
+	lis, err := kcp.Listen("0.0.0.0:13145") //监听1000端口
 	if err != nil {
 		panic(err)
 	}
 	for {
 		//不断监听接收数据
-		conn, e := lis.AcceptKCP()
+		conn, e := lis.Accept()
 		//有数据接受
 		if e != nil {
 			panic(e)
@@ -37,7 +37,7 @@ func OnReceive(conn net.Conn) {
 			fmt.Println(errorx.Wrap(e))
 			break
 		}
-
+		conn.Write(buffer[:n])
 		fmt.Println("receive from client:", buffer[:n])
 	}
 }
