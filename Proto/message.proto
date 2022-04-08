@@ -1,0 +1,43 @@
+syntax = "proto3";
+package pb;
+option go_package="./;pb";
+message Request{
+	UserLoginRequest userLogin = 1;//用户登录
+	UserRegisterRequest userRegister = 2;//用户注册
+}
+
+message Response{
+	UserLoginResponse userLogin = 1;//用户登录
+	UserRegisterResponse userRegister = 2;//用户注册
+}
+
+//通用消息结果
+message Result{
+	bool success = 1;//是否成功
+	string error = 2;//错误信息
+}
+
+//用户注册请求
+message UserRegisterRequest{
+	string userName = 1;//用户名
+	string password = 2;//密码
+}
+
+//用户注册返回
+message UserRegisterResponse{
+	Result result = 1;//结果
+
+}
+
+//用户登录请求
+message UserLoginRequest{
+	string userName = 1;//用户名
+	string password = 2;//密码
+}
+
+//用户登录返回
+message UserLoginResponse{
+	Result result = 1;//结果
+
+}
+

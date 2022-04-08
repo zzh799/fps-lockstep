@@ -1,0 +1,1 @@
+.\Tools\protoc-3.19.1-win64\bin\protoc.exe --go_out=.\GoServer\pb .\Proto\message.proto
