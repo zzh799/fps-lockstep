@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using Pb;
 using UnityEngine;
 
 namespace Network
@@ -9,8 +10,6 @@ namespace Network
 	{
 		private AChannel channel;
 		
-		private readonly byte[] opcodeBytes = new byte[2];
-
 		public NetworkManager Network
 		{
 			get { return NetworkManager.Instance; }
@@ -95,12 +94,14 @@ namespace Network
 				return this.channel.Stream;
 			}
 		}
-
+		
 		private void Run(MemoryStream memoryStream)
 		{
 			memoryStream.Seek(0, SeekOrigin.Begin);
-			Network.MessageDispatcher.Dispatch(this, memoryStream.GetBuffer());
-			Network.ReceiveBytesHandle?.Invoke(memoryStream.GetBuffer());
+			MessageDistributor<Session> distributor = MessageDistributor<Session>.Instance;
+			Message message = Message.Parser.ParseFrom(memoryStream.GetBuffer());
+			distributor.ReceiveMessage(this, message);
+			distributor.Distribute();
 		}
 		
 		public void OnRead(MemoryStream memoryStream)
@@ -113,18 +114,6 @@ namespace Network
 			{
 				Debug.LogError(e);
 			}
-		}
-		
-		public void Send(ushort opcode)
-		{
-			MemoryStream stream = this.Stream;
-			stream.Seek(0, SeekOrigin.Begin);
-			stream.SetLength(Packet.MessageIndex);
-			
-			opcodeBytes.WriteTo(0, opcode);
-			Array.Copy(opcodeBytes, 0, stream.GetBuffer(), 0, opcodeBytes.Length);
-						
-			this.Send(stream);
 		}
 
 		public void Send(byte[] buffers)

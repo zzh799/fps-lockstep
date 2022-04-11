@@ -11,6 +11,7 @@ import (
 func main() {
 	fmt.Println("kcp listens on 13145")
 	lis, err := kcp.Listen("0.0.0.0:13145") //监听1000端口
+	testOneOf()
 	if err != nil {
 		panic(err)
 	}
@@ -39,5 +40,9 @@ func OnReceive(conn net.Conn) {
 		}
 		conn.Write(buffer[:n])
 		fmt.Println("receive from client:", buffer[:n])
+
+		//request := &pb.Request{}
+		//proto.Unmarshal(buffer[:n], request)
+		//request.ProtoReflect().WhichOneof()
 	}
 }

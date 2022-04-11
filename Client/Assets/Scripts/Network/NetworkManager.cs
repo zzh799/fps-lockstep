@@ -11,16 +11,11 @@ namespace Network
 	{
 		public AService Service { get; private set; }
 		public Session Session { get; private set; }
-		
-		public IMessagePacker MessagePacker { get; set; }
-		public IMessageDispatcher MessageDispatcher { get; set; }
 
 		public Action<int> OnConnect{ get; set; }
 		public Action<int> OnError{ get; set; }
-		public Action<byte[]> ReceiveBytesHandle{ get; set; }
-				
-		
-		public override void Init()
+
+		protected override void Init()
 		{
 			SynchronizationContext.SetSynchronizationContext(OneThreadSynchronizationContext.Instance);
 		}
@@ -74,13 +69,6 @@ namespace Network
 			this.Service.Update();
 		}
 
-		public void Send(ushort opcode)
-		{
-			Debug.Log("send message：" + opcode);
-
-			Session.Send(opcode);
-		}
-		
 		public void Dispose()
 		{
 			Session.Dispose();

@@ -2,21 +2,22 @@ using UnityEngine;
 
 public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
-	private static T mInstance = null;
+    public bool global = true;
+    private static T mInstance = null;
 
-	public static T Instance
+    public static T Instance
     {
         get
         {
-			if (mInstance == null)
+            if (mInstance == null)
             {
-            	mInstance = GameObject.FindObjectOfType(typeof(T)) as T;
+                mInstance = GameObject.FindObjectOfType(typeof(T)) as T;
                 if (mInstance == null)
                 {
                     GameObject go = new GameObject(typeof(T).Name);
                     mInstance = go.AddComponent<T>();
                     
-                    GameObject parent = GameObject.Find("Boot");
+                    GameObject parent = GameObject.Find("MonoSingleton");
                     if (parent != null)
                     {
                         go.transform.parent = parent.transform;
@@ -38,16 +39,20 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
 
     private void Awake()
     {
-        if (mInstance == null)
+        if (global)
         {
-            mInstance = this as T;
+            if (mInstance != null && mInstance != this.gameObject.GetComponent<T>())
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            DontDestroyOnLoad(this.gameObject);
+            mInstance = this.gameObject.GetComponent<T>();
         }
-
-        DontDestroyOnLoad(gameObject);
-        Init();
+        this.Init();
     }
 
-    public virtual void Init()
+    protected virtual void Init()
     {
 
     }

@@ -1,6 +1,12 @@
 syntax = "proto3";
 package pb;
 option go_package="./;pb";
+
+message Message{
+	Request request = 1;//请求
+	Response response = 2;//请求
+}
+
 message Request{
 	UserLoginRequest userLogin = 1;//用户登录
 	UserRegisterRequest userRegister = 2;//用户注册
@@ -9,6 +15,17 @@ message Request{
 message Response{
 	UserLoginResponse userLogin = 1;//用户登录
 	UserRegisterResponse userRegister = 2;//用户注册
+}
+
+message Responses{
+	repeated OneOfResponse list = 1;
+}
+
+message OneOfResponse{
+	oneof response {
+		UserLoginResponse userLogin = 1;//用户登录
+		UserRegisterResponse userRegister = 2;//用户注册
+	}
 }
 
 //通用消息结果
