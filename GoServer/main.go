@@ -11,7 +11,6 @@ import (
 func main() {
 	fmt.Println("kcp listens on 13145")
 	lis, err := kcp.Listen("0.0.0.0:13145") //监听1000端口
-	testOneOf()
 	if err != nil {
 		panic(err)
 	}

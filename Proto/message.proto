@@ -17,17 +17,6 @@ message Response{
 	UserRegisterResponse userRegister = 2;//用户注册
 }
 
-message Responses{
-	repeated OneOfResponse list = 1;
-}
-
-message OneOfResponse{
-	oneof response {
-		UserLoginResponse userLogin = 1;//用户登录
-		UserRegisterResponse userRegister = 2;//用户注册
-	}
-}
-
 //通用消息结果
 message Result{
 	bool success = 1;//是否成功
@@ -55,6 +44,5 @@ message UserLoginRequest{
 //用户登录返回
 message UserLoginResponse{
 	Result result = 1;//结果
-
 }
 

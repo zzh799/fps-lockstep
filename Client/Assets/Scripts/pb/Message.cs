@@ -30,25 +30,19 @@ namespace Pb {
             "c2VyTG9naW5SZXF1ZXN0Ei0KDHVzZXJSZWdpc3RlchgCIAEoCzIXLnBiLlVz",
             "ZXJSZWdpc3RlclJlcXVlc3QiZAoIUmVzcG9uc2USKAoJdXNlckxvZ2luGAEg",
             "ASgLMhUucGIuVXNlckxvZ2luUmVzcG9uc2USLgoMdXNlclJlZ2lzdGVyGAIg",
-            "ASgLMhgucGIuVXNlclJlZ2lzdGVyUmVzcG9uc2UiLAoJUmVzcG9uc2VzEh8K",
-            "BGxpc3QYASADKAsyES5wYi5PbmVPZlJlc3BvbnNlInkKDU9uZU9mUmVzcG9u",
-            "c2USKgoJdXNlckxvZ2luGAEgASgLMhUucGIuVXNlckxvZ2luUmVzcG9uc2VI",
-            "ABIwCgx1c2VyUmVnaXN0ZXIYAiABKAsyGC5wYi5Vc2VyUmVnaXN0ZXJSZXNw",
-            "b25zZUgAQgoKCHJlc3BvbnNlIigKBlJlc3VsdBIPCgdzdWNjZXNzGAEgASgI",
-            "Eg0KBWVycm9yGAIgASgJIjkKE1VzZXJSZWdpc3RlclJlcXVlc3QSEAoIdXNl",
-            "ck5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkiMgoUVXNlclJlZ2lzdGVy",
-            "UmVzcG9uc2USGgoGcmVzdWx0GAEgASgLMgoucGIuUmVzdWx0IjYKEFVzZXJM",
-            "b2dpblJlcXVlc3QSEAoIdXNlck5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiAB",
-            "KAkiLwoRVXNlckxvZ2luUmVzcG9uc2USGgoGcmVzdWx0GAEgASgLMgoucGIu",
-            "UmVzdWx0QgdaBS4vO3BiYgZwcm90bzM="));
+            "ASgLMhgucGIuVXNlclJlZ2lzdGVyUmVzcG9uc2UiKAoGUmVzdWx0Eg8KB3N1",
+            "Y2Nlc3MYASABKAgSDQoFZXJyb3IYAiABKAkiOQoTVXNlclJlZ2lzdGVyUmVx",
+            "dWVzdBIQCgh1c2VyTmFtZRgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSIyChRV",
+            "c2VyUmVnaXN0ZXJSZXNwb25zZRIaCgZyZXN1bHQYASABKAsyCi5wYi5SZXN1",
+            "bHQiNgoQVXNlckxvZ2luUmVxdWVzdBIQCgh1c2VyTmFtZRgBIAEoCRIQCghw",
+            "YXNzd29yZBgCIAEoCSIvChFVc2VyTG9naW5SZXNwb25zZRIaCgZyZXN1bHQY",
+            "ASABKAsyCi5wYi5SZXN1bHRCB1oFLi87cGJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.Message), global::Pb.Message.Parser, new[]{ "Request", "Response" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.Request), global::Pb.Request.Parser, new[]{ "UserLogin", "UserRegister" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.Response), global::Pb.Response.Parser, new[]{ "UserLogin", "UserRegister" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Pb.Responses), global::Pb.Responses.Parser, new[]{ "List" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Pb.OneOfResponse), global::Pb.OneOfResponse.Parser, new[]{ "UserLogin", "UserRegister" }, new[]{ "Response" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.Result), global::Pb.Result.Parser, new[]{ "Success", "Error" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.UserRegisterRequest), global::Pb.UserRegisterRequest.Parser, new[]{ "UserName", "Password" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Pb.UserRegisterResponse), global::Pb.UserRegisterResponse.Parser, new[]{ "Result" }, null, null, null, null),
@@ -585,337 +579,6 @@ namespace Pb {
 
   }
 
-  public sealed partial class Responses : pb::IMessage<Responses> {
-    private static readonly pb::MessageParser<Responses> _parser = new pb::MessageParser<Responses>(() => new Responses());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Responses> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Responses() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Responses(Responses other) : this() {
-      list_ = other.list_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Responses Clone() {
-      return new Responses(this);
-    }
-
-    /// <summary>Field number for the "list" field.</summary>
-    public const int ListFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Pb.OneOfResponse> _repeated_list_codec
-        = pb::FieldCodec.ForMessage(10, global::Pb.OneOfResponse.Parser);
-    private readonly pbc::RepeatedField<global::Pb.OneOfResponse> list_ = new pbc::RepeatedField<global::Pb.OneOfResponse>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Pb.OneOfResponse> List {
-      get { return list_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Responses);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Responses other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!list_.Equals(other.list_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= list_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      list_.WriteTo(output, _repeated_list_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += list_.CalculateSize(_repeated_list_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Responses other) {
-      if (other == null) {
-        return;
-      }
-      list_.Add(other.list_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            list_.AddEntriesFrom(input, _repeated_list_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class OneOfResponse : pb::IMessage<OneOfResponse> {
-    private static readonly pb::MessageParser<OneOfResponse> _parser = new pb::MessageParser<OneOfResponse>(() => new OneOfResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<OneOfResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OneOfResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OneOfResponse(OneOfResponse other) : this() {
-      switch (other.ResponseCase) {
-        case ResponseOneofCase.UserLogin:
-          UserLogin = other.UserLogin.Clone();
-          break;
-        case ResponseOneofCase.UserRegister:
-          UserRegister = other.UserRegister.Clone();
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OneOfResponse Clone() {
-      return new OneOfResponse(this);
-    }
-
-    /// <summary>Field number for the "userLogin" field.</summary>
-    public const int UserLoginFieldNumber = 1;
-    /// <summary>
-    ///用户登录
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Pb.UserLoginResponse UserLogin {
-      get { return responseCase_ == ResponseOneofCase.UserLogin ? (global::Pb.UserLoginResponse) response_ : null; }
-      set {
-        response_ = value;
-        responseCase_ = value == null ? ResponseOneofCase.None : ResponseOneofCase.UserLogin;
-      }
-    }
-
-    /// <summary>Field number for the "userRegister" field.</summary>
-    public const int UserRegisterFieldNumber = 2;
-    /// <summary>
-    ///用户注册
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Pb.UserRegisterResponse UserRegister {
-      get { return responseCase_ == ResponseOneofCase.UserRegister ? (global::Pb.UserRegisterResponse) response_ : null; }
-      set {
-        response_ = value;
-        responseCase_ = value == null ? ResponseOneofCase.None : ResponseOneofCase.UserRegister;
-      }
-    }
-
-    private object response_;
-    /// <summary>Enum of possible cases for the "response" oneof.</summary>
-    public enum ResponseOneofCase {
-      None = 0,
-      UserLogin = 1,
-      UserRegister = 2,
-    }
-    private ResponseOneofCase responseCase_ = ResponseOneofCase.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ResponseOneofCase ResponseCase {
-      get { return responseCase_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearResponse() {
-      responseCase_ = ResponseOneofCase.None;
-      response_ = null;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as OneOfResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OneOfResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(UserLogin, other.UserLogin)) return false;
-      if (!object.Equals(UserRegister, other.UserRegister)) return false;
-      if (ResponseCase != other.ResponseCase) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (responseCase_ == ResponseOneofCase.UserLogin) hash ^= UserLogin.GetHashCode();
-      if (responseCase_ == ResponseOneofCase.UserRegister) hash ^= UserRegister.GetHashCode();
-      hash ^= (int) responseCase_;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (responseCase_ == ResponseOneofCase.UserLogin) {
-        output.WriteRawTag(10);
-        output.WriteMessage(UserLogin);
-      }
-      if (responseCase_ == ResponseOneofCase.UserRegister) {
-        output.WriteRawTag(18);
-        output.WriteMessage(UserRegister);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (responseCase_ == ResponseOneofCase.UserLogin) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserLogin);
-      }
-      if (responseCase_ == ResponseOneofCase.UserRegister) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserRegister);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OneOfResponse other) {
-      if (other == null) {
-        return;
-      }
-      switch (other.ResponseCase) {
-        case ResponseOneofCase.UserLogin:
-          if (UserLogin == null) {
-            UserLogin = new global::Pb.UserLoginResponse();
-          }
-          UserLogin.MergeFrom(other.UserLogin);
-          break;
-        case ResponseOneofCase.UserRegister:
-          if (UserRegister == null) {
-            UserRegister = new global::Pb.UserRegisterResponse();
-          }
-          UserRegister.MergeFrom(other.UserRegister);
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            global::Pb.UserLoginResponse subBuilder = new global::Pb.UserLoginResponse();
-            if (responseCase_ == ResponseOneofCase.UserLogin) {
-              subBuilder.MergeFrom(UserLogin);
-            }
-            input.ReadMessage(subBuilder);
-            UserLogin = subBuilder;
-            break;
-          }
-          case 18: {
-            global::Pb.UserRegisterResponse subBuilder = new global::Pb.UserRegisterResponse();
-            if (responseCase_ == ResponseOneofCase.UserRegister) {
-              subBuilder.MergeFrom(UserRegister);
-            }
-            input.ReadMessage(subBuilder);
-            UserRegister = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   /// <summary>
   ///通用消息结果
   /// </summary>
@@ -927,7 +590,7 @@ namespace Pb {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1093,7 +756,7 @@ namespace Pb {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1259,7 +922,7 @@ namespace Pb {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1400,7 +1063,7 @@ namespace Pb {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1566,7 +1229,7 @@ namespace Pb {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Pb.MessageReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
