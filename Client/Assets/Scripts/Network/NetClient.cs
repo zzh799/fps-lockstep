@@ -11,7 +11,8 @@ public class NetClient : MonoSingleton<NetClient>
 
     public static long starttime = 0;
 
-    void Start()
+
+    protected override void Init()
     {
         NetworkManager network = NetworkManager.Instance;
         network.InitService(NetworkProtocol.KCP);
@@ -19,6 +20,7 @@ public class NetClient : MonoSingleton<NetClient>
         network.OnConnect += OnConnect;
         network.OnError += OnError;
     }
+
     private void OnError(int e)
     {
         Debug.LogError("net error：" + e);

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
+public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
     public bool global = true;
     private static T mInstance = null;
@@ -17,7 +17,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                     GameObject go = new GameObject(typeof(T).Name);
                     mInstance = go.AddComponent<T>();
                     
-                    GameObject parent = GameObject.Find("MonoSingleton");
+                    GameObject parent = GameObject.Find("GameManager");
                     if (parent != null)
                     {
                         go.transform.parent = parent.transform;
@@ -54,7 +54,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
 
     protected virtual void Init()
     {
-
+  
     }
 
     public void DestroySelf()
@@ -65,8 +65,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
     }
 
     public virtual void Dispose()
-    {
-
+    { 
     }
 
 }
