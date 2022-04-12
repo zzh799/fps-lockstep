@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1024,768">
+  <controller name="ctrlState" pages="0,login,1,register" selected="0"/>
+  <displayList>
+    <loader id="n1_x3o4" name="n1" xy="0,0" size="1024,768" url="ui://93tyfp33x3o45j" align="center" vAlign="middle" fill="scaleNoBorder">
+      <relation target="" sidePair="width-width,height-height"/>
+    </loader>
+    <component id="n2_x3o4" name="n2" src="x3o47r" fileName="Component/ComInputFieldBackGround.xml" xy="344,287" size="353,61"/>
+    <text id="n3_x3o4" name="txtUserName" xy="355,298" size="331,39" fontSize="18" color="#cccccc" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入用户名">
+      <relation target="n2_x3o4" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+    <component id="n4_x3o4" name="n4" src="x3o47r" fileName="Component/ComInputFieldBackGround.xml" xy="344,371" size="353,61">
+      <relation target="n2_x3o4" sidePair="width-width,height-height,center-center,top-bottom"/>
+    </component>
+    <text id="n5_x3o4" name="txtPassword" xy="355,382" size="331,39" fontSize="18" color="#cccccc" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请输入密码" password="true">
+      <relation target="n4_x3o4" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+    <component id="n6_x3o4" name="btnLogin" src="x3o47s" fileName="Component/ComButton.xml" xy="350,481" scale="0.3,0.3">
+      <gearDisplay controller="ctrlState" pages="0"/>
+      <Button title="登录"/>
+    </component>
+    <component id="n7_x3o4" name="btnRegister" src="x3o47s" fileName="Component/ComButton.xml" xy="537,481" scale="0.3,0.3">
+      <gearDisplay controller="ctrlState" pages="0"/>
+      <Button title="注册"/>
+    </component>
+    <component id="n8_x3o4" name="n8" src="x3o47r" fileName="Component/ComInputFieldBackGround.xml" xy="344,440" size="353,61">
+      <gearDisplay controller="ctrlState" pages="1"/>
+      <relation target="n2_x3o4" sidePair="width-width,height-height,center-center,top-bottom"/>
+    </component>
+    <text id="n9_x3o4" name="txtPassword2" xy="355,451" size="331,39" fontSize="18" color="#cccccc" align="center" vAlign="middle" autoSize="none" text="" input="true" prompt="请再次输入密码" password="true">
+      <gearDisplay controller="ctrlState" pages="1"/>
+      <relation target="n8_x3o4" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+    <component id="n11_x3o4" name="btnReturnLogin" src="x3o47s" fileName="Component/ComButton.xml" xy="347,528" scale="0.3,0.3">
+      <gearDisplay controller="ctrlState" pages="1"/>
+      <Button title="返回登录"/>
+    </component>
+    <component id="n13_x3o4" name="btnRegisterConfirm" src="x3o47s" fileName="Component/ComButton.xml" xy="539,528" scale="0.3,0.3">
+      <gearDisplay controller="ctrlState" pages="1"/>
+      <Button title="注册"/>
+    </component>
+  </displayList>
+</component>

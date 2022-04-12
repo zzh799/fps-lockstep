@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="518,170" extention="Button">
+  <controller name="button" pages="2,up,3,down,4,over,5,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n0_x3o4" name="n0" src="x3o41" fileName="Resources/Controls/Buttons/Rectangular/Large/Button_RL_Background.png" xy="0,0" color="#757575">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n1_x3o4" name="n1" src="x3o44w" fileName="Resources/Controls/Buttons/Rectangular/Large/Button_RL_Border.png" xy="-17,4">
+      <relation target="n0_x3o4" sidePair="height-height,middle-middle,left-left"/>
+    </image>
+    <image id="n2_x3o4" name="n2" src="x3o44w" fileName="Resources/Controls/Buttons/Rectangular/Large/Button_RL_Border.png" xy="388,5" flip="hz">
+      <relation target="n0_x3o4" sidePair="height-height,middle-middle,right-right"/>
+    </image>
+    <image id="n3_x3o4" name="n3" src="x3o44y" fileName="Resources/Controls/Buttons/Rectangular/Large/Button_RL_Overlay.png" xy="25,24" size="463,120">
+      <relation target="n0_x3o4" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </image>
+    <image id="n4_x3o4" name="n4" src="x3o44x" fileName="Resources/Controls/Buttons/Rectangular/Large/Button_RL_Hover.png" xy="11,12" size="498,154" alpha="0.2">
+      <gearDisplay controller="button" pages="4,5"/>
+    </image>
+    <text id="n5_x3o4" name="title" xy="90,41" size="357,90" fontSize="56" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="按钮">
+      <relation target="n0_x3o4" sidePair="width-width,height-height,center-center,middle-middle"/>
+    </text>
+  </displayList>
+  <Button downEffect="dark" downEffectValue=".8"/>
+</component>

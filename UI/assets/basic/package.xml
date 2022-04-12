@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="93tyfp33">
+  <resources>
+    <component id="v3wk0" name="WndLogin.xml" path="/" exported="true"/>
+    <image id="x3o41" name="Button_RL_Background.png" path="/Resources/Controls/Buttons/Rectangular/Large/"/>
+    <image id="x3o42" name="HeroSelect_Role_Support.png" path="/Resources/Lobby/Hero Select/Role Icons/"/>
+    <image id="x3o43" name="HeroSelect_Role_Tank.png" path="/Resources/Lobby/Hero Select/Role Icons/"/>
+    <image id="x3o44" name="Lobby_Border.png" path="/Resources/Lobby/Miscellaneous/"/>
+    <image id="x3o45" name="Lobby_Border_Arrow.png" path="/Resources/Lobby/Miscellaneous/"/>
+    <image id="x3o46" name="Lobby_Gradient.png" path="/Resources/Lobby/Miscellaneous/"/>
+    <image id="x3o47" name="Lobby_Notification_Background.png" path="/Resources/Lobby/Notifications/"/>
+    <image id="x3o48" name="Lobby_Notification_Border_Bottom.png" path="/Resources/Lobby/Notifications/"/>
+    <image id="x3o49" name="Lobby_Notification_Border_Middle.png" path="/Resources/Lobby/Notifications/"/>
+    <image id="x3o4a" name="Lobby_Notification_Border_Top.png" path="/Resources/Lobby/Notifications/"/>
+    <image id="x3o4b" name="Lobby_Notification_Gradient.png" path="/Resources/Lobby/Notifications/"/>
+    <image id="x3o4c" name="SwitchSelect_Background.png" path="/Resources/Lobby/Switch Select/"/>
+    <image id="x3o4d" name="SwitchSelect_Background_Arrow.png" path="/Resources/Lobby/Switch Select/"/>
+    <image id="x3o4e" name="SwitchSelect_Button_Arrow.png" path="/Resources/Lobby/Switch Select/"/>
+    <image id="x3o4f" name="SwitchSelect_Button_Arrow_Hover.png" path="/Resources/Lobby/Switch Select/"/>
+    <image id="x3o4g" name="HeroSelect_Role_Offsense.png" path="/Resources/Lobby/Hero Select/Role Icons/"/>
+    <image id="x3o4h" name="Tooltip_Lobby_Anchor_Bottom_BG.png" path="/Resources/Lobby/Tooltip/"/>
+    <image id="x3o4i" name="Tooltip_Lobby_Anchor_Left_BG.png" path="/Resources/Lobby/Tooltip/"/>
+    <image id="x3o4j" name="Tooltip_Lobby_Anchor_Left_FG.png" path="/Resources/Lobby/Tooltip/"/>
+    <image id="x3o4k" name="Tooltip_Lobby_Background.png" path="/Resources/Lobby/Tooltip/"/>
+    <image id="x3o4l" name="White.png" path="/Resources/Miscellaneous/"/>
+    <image id="x3o4m" name="General_Border_Horizontal.png" path="/Resources/Miscellaneous/Borders/"/>
+    <image id="x3o4n" name="General_Border_Horizontal_Arrow.png" path="/Resources/Miscellaneous/Borders/"/>
+    <image id="x3o4o" name="General_Border_Horizontal_Arrow_Fill.png" path="/Resources/Miscellaneous/Borders/"/>
+    <image id="x3o4p" name="Currency_Bronze_Small.png" path="/Resources/Miscellaneous/Currencies/"/>
+    <image id="x3o4q" name="Currency_Gold_Small.png" path="/Resources/Miscellaneous/Currencies/"/>
+    <image id="x3o4r" name="Currency_Silver_Small.png" path="/Resources/Miscellaneous/Currencies/"/>
+    <image id="x3o4s" name="Seprator_Horizontal.png" path="/Resources/Miscellaneous/Separators/"/>
+    <image id="x3o4t" name="Seprator_Vertical.png" path="/Resources/Miscellaneous/Separators/"/>
+    <image id="x3o4u" name="GameMenu_Tribals.png" path="/Resources/Miscellaneous/Tribals/"/>
+    <image id="x3o4v" name="General_Tribal.png" path="/Resources/Miscellaneous/Tribals/"/>
+    <image id="x3o4w" name="Tooltip_Lobby_Anchor_Bottom_FG.png" path="/Resources/Lobby/Tooltip/"/>
+    <image id="x3o4x" name="HeroSelect_Role_Defense.png" path="/Resources/Lobby/Hero Select/Role Icons/"/>
+    <image id="x3o4y" name="HeroSelect_Hero_Selected.png" path="/Resources/Lobby/Hero Select/Hero Frame/"/>
+    <image id="x3o4z" name="HeroSelect_Hero_Frame.png" path="/Resources/Lobby/Hero Select/Hero Frame/"/>
+    <image id="x3o410" name="BottomBar_Background.png" path="/Resources/Lobby/Bottom Bar/"/>
+    <image id="x3o411" name="BottomBar_Border.png" path="/Resources/Lobby/Bottom Bar/"/>
+    <image id="x3o412" name="BottomBar_Gradient.png" path="/Resources/Lobby/Bottom Bar/"/>
+    <image id="x3o413" name="BottomBar_Gradient_Background.png" path="/Resources/Lobby/Bottom Bar/"/>
+    <image id="x3o414" name="BottomBar_CenterTribal_Background.png" path="/Resources/Lobby/Bottom Bar/Tribals/"/>
+    <image id="x3o415" name="BottomBar_CenterTribal_Fill.png" path="/Resources/Lobby/Bottom Bar/Tribals/"/>
+    <image id="x3o416" name="BottomBar_SideTribal_Background.png" path="/Resources/Lobby/Bottom Bar/Tribals/"/>
+    <image id="x3o417" name="BottomBar_SideTribal_Fill.png" path="/Resources/Lobby/Bottom Bar/Tribals/"/>
+    <image id="x3o418" name="CharacterCreate_Section_Background.png" path="/Resources/Lobby/Character Create/"/>
+    <image id="x3o419" name="CharacterCreate_Faction_Blue.png" path="/Resources/Lobby/Character Create/Factions/"/>
+    <image id="x3o41a" name="CharacterCreate_Faction_Red.png" path="/Resources/Lobby/Character Create/Factions/"/>
+    <image id="x3o41b" name="CharacterCreate_Gender_Female.png" path="/Resources/Lobby/Character Create/Genders/"/>
+    <image id="x3o41c" name="CharacterCreate_Gender_Male.png" path="/Resources/Lobby/Character Create/Genders/"/>
+    <image id="x3o41d" name="CS3D_CharacterInfo_Glow.png" path="/Resources/Lobby/Character Select/3D/"/>
+    <image id="x3o41e" name="CS3D_CharacterInfo_Tribal_Bottom.png" path="/Resources/Lobby/Character Select/3D/"/>
+    <image id="x3o41f" name="CS3D_CharacterInfo_Tribal_Top.png" path="/Resources/Lobby/Character Select/3D/"/>
+    <image id="x3o41g" name="CS3D_Arrow_Background.png" path="/Resources/Lobby/Character Select/3D/Arrow Button/"/>
+    <image id="x3o41h" name="HeroSelect_Hero_Background.png" path="/Resources/Lobby/Hero Select/Hero Frame/"/>
+    <image id="x3o41i" name="CharacterSelect_MessageBox_Icon_Important.png" path="/Resources/Lobby/Character Select/Message Box/"/>
+    <image id="x3o41j" name="CharacterSelect_MessageBox_Button.png" path="/Resources/Lobby/Character Select/Message Box/"/>
+    <image id="x3o41k" name="CharacterSelect_MessageBox.png" path="/Resources/Lobby/Character Select/Message Box/"/>
+    <image id="x3o41l" name="CSL_Header_Tribal.png" path="/Resources/Lobby/Character Select/List Select/Header/"/>
+    <image id="x3o41m" name="CSL_Header_Glow.png" path="/Resources/Lobby/Character Select/List Select/Header/"/>
+    <image id="x3o41n" name="General_Tribal_Glow.png" path="/Resources/Miscellaneous/Tribals/"/>
+    <image id="x3o41o" name="CSL_Character_Selected.png" path="/Resources/Lobby/Character Select/List Select/Character/"/>
+    <image id="x3o41p" name="CSL_Character_DeleteBtn.png" path="/Resources/Lobby/Character Select/List Select/Character/"/>
+    <image id="x3o41q" name="CSL_Character_CreateBtn_Icon.png" path="/Resources/Lobby/Character Select/List Select/Character/"/>
+    <image id="x3o41r" name="CSL_Character_Avatar_Frame.png" path="/Resources/Lobby/Character Select/List Select/Character/"/>
+    <image id="x3o41s" name="CS3D_Arrow_Overlay.png" path="/Resources/Lobby/Character Select/3D/Arrow Button/"/>
+    <image id="x3o41t" name="CS3D_Arrow_Hover.png" path="/Resources/Lobby/Character Select/3D/Arrow Button/"/>
+    <image id="x3o41u" name="CS3D_Arrow_Foreground.png" path="/Resources/Lobby/Character Select/3D/Arrow Button/"/>
+    <image id="x3o41v" name="CSL_Character_Gradient.png" path="/Resources/Lobby/Character Select/List Select/Character/"/>
+    <image id="x3o41w" name="ModalBox_Background.png" path="/Resources/Modal Box/"/>
+    <image id="x3o41x" name="Icon_Arrows_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o41y" name="Icon_Book_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o41z" name="Inventory_Slot_Glow.png" path="/Resources/Windows/Inventory/"/>
+    <image id="x3o420" name="Inventory_Slot_Overlay.png" path="/Resources/Windows/Inventory/"/>
+    <image id="x3o421" name="Inventory_Slot_QualityBorder.png" path="/Resources/Windows/Inventory/"/>
+    <image id="x3o422" name="Spellbook_Row_Background.png" path="/Resources/Windows/Spellbook/"/>
+    <image id="x3o423" name="Down_End.png" path="/Resources/Windows/Talents/Arrows/"/>
+    <image id="x3o424" name="Down_Start,png.png" path="/Resources/Windows/Talents/Arrows/"/>
+    <image id="x3o425" name="Down_To_Right.png" path="/Resources/Windows/Talents/Arrows/"/>
+    <image id="x3o426" name="Right_End.png" path="/Resources/Windows/Talents/Arrows/"/>
+    <image id="x3o427" name="Right_Start.png" path="/Resources/Windows/Talents/Arrows/"/>
+    <image id="x3o428" name="Talent_Slot_Background.png" path="/Resources/Windows/Talents/Slots/"/>
+    <image id="x3o429" name="Talent_Slot_GoldBorder.png" path="/Resources/Windows/Talents/Slots/"/>
+    <image id="x3o42a" name="Talent_Slot_GoldGlow.png" path="/Resources/Windows/Talents/Slots/"/>
+    <image id="x3o42b" name="Talent_Slot_Points_Background.png" path="/Resources/Windows/Talents/Slots/"/>
+    <image id="x3o42c" name="Talents_Tab_Active_Arrow.png" path="/Resources/Windows/Talents/Tab/"/>
+    <image id="x3o42d" name="Talents_Tab_Background.png" path="/Resources/Windows/Talents/Tab/"/>
+    <image id="x3o42e" name="Flame.png" path="/Resources/Windows/Talents/Tab/Icons/"/>
+    <image id="x3o42f" name="Shield.png" path="/Resources/Windows/Talents/Tab/Icons/"/>
+    <image id="x3o42g" name="Window_Tabs_Active_Gradient.png" path="/Resources/Windows/Window/Tabs/"/>
+    <image id="x3o42h" name="Window_Tabs_Active_Border.png" path="/Resources/Windows/Window/Tabs/"/>
+    <image id="x3o42i" name="Window_Tabs_Active_Arrow.png" path="/Resources/Windows/Window/Tabs/"/>
+    <image id="x3o42j" name="Window_Header_Tribals_Small_Fill.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42k" name="Window_Header_Tribals_Small_Background.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42l" name="Window_Header_Tribals_Fill.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42m" name="Inventory_Slot_Background.png" path="/Resources/Windows/Inventory/"/>
+    <image id="x3o42n" name="Window_Header_Tribals_Background.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42o" name="Window_Header_Border_Side.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42p" name="Window_Header_Border_Center.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42q" name="Window_Header_Background.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42r" name="Window_Background.png" path="/Resources/Windows/Window/"/>
+    <image id="x3o42s" name="Vendor_Frame.png" path="/Resources/Windows/Vendor/"/>
+    <image id="x3o42t" name="Sword.png" path="/Resources/Windows/Talents/Tab/Icons/"/>
+    <image id="x3o42u" name="Window_Header_Gradient.png" path="/Resources/Windows/Window/Header/"/>
+    <image id="x3o42v" name="Login_Toggle_Gradient.png" path="/Resources/Lobby/"/>
+    <image id="x3o42w" name="Character_Titles_Glow.png" path="/Resources/Windows/Character/Titles/"/>
+    <image id="x3o42x" name="Character_Titles_Checkbox_Background.png" path="/Resources/Windows/Character/Titles/"/>
+    <image id="x3o42y" name="Icon_Deathkiss_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o42z" name="Icon_Fireball_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o430" name="Icon_Leafs_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o431" name="Icon_Pyroblast_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o432" name="Icon_Shield_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o433" name="Icon_Sunshiny_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o434" name="Icon_Sword_128.png" path="/Resources/Spell &amp; Item Icons/"/>
+    <image id="x3o435" name="TextBox_Background.png" path="/Resources/Text Boxes/"/>
+    <image id="x3o436" name="TextBox_Icon_Circle.png" path="/Resources/Text Boxes/Icons/"/>
+    <image id="x3o437" name="TextBox_Icon_Star.png" path="/Resources/Text Boxes/Icons/"/>
+    <image id="x3o438" name="TextBox_Icon_Triangle.png" path="/Resources/Text Boxes/Icons/"/>
+    <image id="x3o439" name="Character_Example.png" path="/Resources/Windows/Character/"/>
+    <image id="x3o43a" name="Equip_Slot_Background.png" path="/Resources/Windows/Character/Equip Slot/"/>
+    <image id="x3o43b" name="Back.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43c" name="Belt.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43d" name="Boots.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43e" name="Bracers.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43f" name="Character_RC_Middle.png" path="/Resources/Windows/Character/Rotation Controls/"/>
+    <image id="x3o43g" name="Character_RC_Left.png" path="/Resources/Windows/Character/Rotation Controls/"/>
+    <image id="x3o43h" name="Character_Reputation_Bar_Fill.png" path="/Resources/Windows/Character/Reputations/"/>
+    <image id="x3o43i" name="Character_Reputation_Bar_Background.png" path="/Resources/Windows/Character/Reputations/"/>
+    <image id="x3o43j" name="Shoulders.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43k" name="Ring.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43l" name="Character_Titles_Checkbox_Checkmark.png" path="/Resources/Windows/Character/Titles/"/>
+    <image id="x3o43m" name="OffWeapon.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43n" name="MainWeapon.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43o" name="Legs.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43p" name="Helmet.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43q" name="Gloves.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43r" name="Earrings.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43s" name="Chest.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43t" name="Necklace.png" path="/Resources/Windows/Character/Equip Slot/Icons/"/>
+    <image id="x3o43u" name="LoadingBar_Fill.png" path="/Resources/Loading Bar/"/>
+    <image id="x3o43v" name="LoadingBar_Background.png" path="/Resources/Loading Bar/"/>
+    <image id="x3o43w" name="UnitFrame_Party_Role_Background.png" path="/Resources/HUD/Unit Frames/Party/"/>
+    <image id="x3o43x" name="CSL_Character_Avatar_Example.png" path="/Resources/Demo/Avatars/"/>
+    <image id="x3o43y" name="HeroSelect_Hero_AvatarExample.png" path="/Resources/Demo/Avatars/"/>
+    <image id="x3o43z" name="Portrait.png" path="/Resources/Demo/Avatars/"/>
+    <image id="x3o440" name="UnitFrame_Main_Avatar_Example.png" path="/Resources/Demo/Avatars/"/>
+    <image id="x3o441" name="CharacterCreate_CharacterShade.png" path="/Resources/Demo/Character Shades/"/>
+    <image id="x3o442" name="CharacterSelect_List_CharacterShade.png" path="/Resources/Demo/Character Shades/"/>
+    <image id="x3o443" name="HeroSelect_CharacterShade.png" path="/Resources/Demo/Character Shades/"/>
+    <image id="x3o444" name="Logo_Large_Background.png" path="/Resources/Demo/Logo Large/"/>
+    <image id="x3o445" name="Logo_Large_Foreground_Tribals.png" path="/Resources/Demo/Logo Large/"/>
+    <image id="x3o446" name="Logo_Large_Texts.png" path="/Resources/Demo/Logo Large/"/>
+    <image id="x3o447" name="Logo_Large_Tribal.png" path="/Resources/Demo/Logo Large/"/>
+    <image id="x3o448" name="Logo_Small_Background.png" path="/Resources/Demo/Logo Small/"/>
+    <image id="x3o449" name="Logo_Small_Foreground_Tribals.png" path="/Resources/Demo/Logo Small/"/>
+    <image id="x3o44a" name="Logo_Small_Texts.png" path="/Resources/Demo/Logo Small/"/>
+    <image id="x3o44b" name="Logo_Small_Tribal.png" path="/Resources/Demo/Logo Small/"/>
+    <image id="x3o44c" name="ActionBar_Tribals.png" path="/Resources/HUD/Action Bar/"/>
+    <image id="x3o44d" name="ActionBar_BarMenu_Arrow.png" path="/Resources/HUD/Action Bar/Bar Menu/"/>
+    <image id="x3o44e" name="ActionBar_Globe_Fill_Empty.png" path="/Resources/HUD/Action Bar/Globes/"/>
+    <image id="x3o44f" name="ActionBar_Globe_Fill_Blue.png" path="/Resources/HUD/Action Bar/Globes/"/>
+    <image id="x3o44g" name="ActionBar_Globe_Background.png" path="/Resources/HUD/Action Bar/Globes/"/>
+    <image id="x3o44h" name="XPBar_Fill.png" path="/Resources/HUD/Action Bar/Experience Bar/"/>
+    <image id="x3o44i" name="XPBar_Border_Gradient.png" path="/Resources/HUD/Action Bar/Experience Bar/"/>
+    <image id="x3o44j" name="XPBar_Background.png" path="/Resources/HUD/Action Bar/Experience Bar/"/>
+    <image id="x3o44k" name="CharacterCreate_Race_Example.png" path="/Resources/Demo/Avatars/"/>
+    <image id="x3o44l" name="Settings.png" path="/Resources/HUD/Action Bar/Buttons/Icons/"/>
+    <image id="x3o44m" name="Flame.png" path="/Resources/HUD/Action Bar/Buttons/Icons/"/>
+    <image id="x3o44n" name="Book.png" path="/Resources/HUD/Action Bar/Buttons/Icons/"/>
+    <image id="x3o44o" name="ActionBar_Button_Hover.png" path="/Resources/HUD/Action Bar/Buttons/"/>
+    <image id="x3o44p" name="ActionBar_Button_Background.png" path="/Resources/HUD/Action Bar/Buttons/"/>
+    <image id="x3o44q" name="ActionBar_BarMenu_Background.png" path="/Resources/HUD/Action Bar/Bar Menu/"/>
+    <image id="x3o44r" name="ActionBar_BarMenu_Arrow_Hover.png" path="/Resources/HUD/Action Bar/Bar Menu/"/>
+    <image id="x3o44s" name="Profile.png" path="/Resources/HUD/Action Bar/Buttons/Icons/"/>
+    <image id="x3o44t" name="ActionBar_Globe_Fill_Grayscale.png" path="/Resources/HUD/Action Bar/Globes/"/>
+    <image id="x3o44u" name="Minimap_Example.png" path="/Resources/Demo/"/>
+    <image id="x3o44v" name="Cursor_Normal.png" path="/Resources/Cursors/"/>
+    <image id="x3o44w" name="Button_RL_Border.png" path="/Resources/Controls/Buttons/Rectangular/Large/"/>
+    <image id="x3o44x" name="Button_RL_Hover.png" path="/Resources/Controls/Buttons/Rectangular/Large/"/>
+    <image id="x3o44y" name="Button_RL_Overlay.png" path="/Resources/Controls/Buttons/Rectangular/Large/"/>
+    <image id="x3o44z" name="Button_S1_Background.png" path="/Resources/Controls/Buttons/Square/"/>
+    <image id="x3o450" name="Button_S1_Icon_Back.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o451" name="Button_S1_Icon_Close.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o452" name="Button_S1_Icon_Close_Small.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o453" name="Button_S1_Icon_Create.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o454" name="Button_S1_Icon_Delete.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o455" name="Button_S1_Icon_Menu.png" path="/Resources/Controls/Buttons/Square/Icons/"/>
+    <image id="x3o456" name="InputField_Background.png" path="/Resources/Controls/Input Field/" scale="9grid" scale9grid="16,16,32,32"/>
+    <image id="x3o457" name="InputField_Background2.png" path="/Resources/Controls/Input Field/"/>
+    <image id="x3o458" name="InputField_Focus.png" path="/Resources/Controls/Input Field/"/>
+    <image id="x3o459" name="InputField_Glow.png" path="/Resources/Controls/Input Field/"/>
+    <image id="x3o45a" name="InputField_Gradient.png" path="/Resources/Controls/Input Field/"/>
+    <image id="x3o45b" name="InputField_Tribal.png" path="/Resources/Controls/Input Field/"/>
+    <image id="x3o45c" name="SelectField_Arrow.png" path="/Resources/Controls/Select Field/"/>
+    <image id="x3o45d" name="SwitchToggle_Handle.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45e" name="Radio_Press.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45f" name="Radio_Hover.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45g" name="Radio_Checkmark.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45h" name="Radio_Background.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45i" name="Checkbox_Hover.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45j" name="Background.png" path="/Resources/Demo/"/>
+    <image id="x3o45k" name="Checkbox_Checkmark.png" path="/Resources/Controls/Toggles/"/>
+    <image id="x3o45l" name="Slider_Horizontal_Fill.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45m" name="Slider_Horizontal_Background.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45n" name="Slider_Box_Background.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45o" name="Slider_Advanced_Horizontal_Handle_Hover.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45p" name="Slider_Advanced_Horizontal_Handle.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45q" name="SelectField_Arrow_Hover.png" path="/Resources/Controls/Select Field/"/>
+    <image id="x3o45r" name="Slider_Horizontal_Handle.png" path="/Resources/Controls/Sliders/"/>
+    <image id="x3o45s" name="Window_Tabs_Bar_Background_Middle.png" path="/Resources/Windows/Window/Tabs/Bar/"/>
+    <image id="x3o45t" name="ActionBar_Globe_Fill_Red.png" path="/Resources/HUD/Action Bar/Globes/"/>
+    <image id="x3o45u" name="ActionBar_MainSlot_Background.png" path="/Resources/HUD/Action Bar/Slots/"/>
+    <image id="x3o45v" name="Notification_Background2.png" path="/Resources/HUD/Notifications/"/>
+    <image id="x3o45w" name="Notification_Background2_Mirror.png" path="/Resources/HUD/Notifications/"/>
+    <image id="x3o45x" name="QuestTracker_Border.png" path="/Resources/HUD/Quest Tracker/"/>
+    <image id="x3o45y" name="QuestTracker_Button_Arrow.png" path="/Resources/HUD/Quest Tracker/"/>
+    <image id="x3o45z" name="QuestTracker_Button_Background.png" path="/Resources/HUD/Quest Tracker/"/>
+    <image id="x3o460" name="QuestTracker_Gradient.png" path="/Resources/HUD/Quest Tracker/"/>
+    <image id="x3o461" name="QuestTracker_Checkbox_Background.png" path="/Resources/HUD/Quest Tracker/Checkbox/"/>
+    <image id="x3o462" name="QuestTracker_Checkbox_Checkmark_Complete.png" path="/Resources/HUD/Quest Tracker/Checkbox/"/>
+    <image id="x3o463" name="QuestTracker_Checkbox_Checkmark_Failed.png" path="/Resources/HUD/Quest Tracker/Checkbox/"/>
+    <image id="x3o464" name="Tooltip_Anchor.png" path="/Resources/HUD/Tooltip/"/>
+    <image id="x3o465" name="Tooltip_Background.png" path="/Resources/HUD/Tooltip/"/>
+    <image id="x3o466" name="UnitFrame_Main_Background.png" path="/Resources/HUD/Unit Frames/Main/"/>
+    <image id="x3o467" name="UnitFrame_Main_Elite.png" path="/Resources/HUD/Unit Frames/Main/"/>
+    <image id="x3o468" name="UnitFrame_Main_Avatar_Background.png" path="/Resources/HUD/Unit Frames/Main/Avatar/"/>
+    <image id="x3o469" name="UnitFrame_Main_Avatar_Mask.png" path="/Resources/HUD/Unit Frames/Main/Avatar/"/>
+    <image id="x3o46a" name="UnitFrame_Main_Avatar_Overlay.png" path="/Resources/HUD/Unit Frames/Main/Avatar/"/>
+    <image id="x3o46b" name="UnitFrame_Main_Avatar_TR.png" path="/Resources/HUD/Unit Frames/Main/Avatar/"/>
+    <image id="x3o46c" name="UnitFrame_Party_Level_Background.png" path="/Resources/HUD/Unit Frames/Party/"/>
+    <image id="x3o46d" name="UnitFrame_Party_Background.png" path="/Resources/HUD/Unit Frames/Party/"/>
+    <image id="x3o46e" name="UnitFrame_Party_Avatar_Background.png" path="/Resources/HUD/Unit Frames/Party/"/>
+    <image id="x3o46f" name="UnitFrame_Main_Role_Tank.png" path="/Resources/HUD/Unit Frames/Main/Role/Icons/"/>
+    <image id="x3o46g" name="UnitFrame_Main_Role_HPS.png" path="/Resources/HUD/Unit Frames/Main/Role/Icons/"/>
+    <image id="x3o46h" name="UnitFrame_Main_Role_DPS.png" path="/Resources/HUD/Unit Frames/Main/Role/Icons/"/>
+    <image id="x3o46i" name="Notification_Background.png" path="/Resources/HUD/Notifications/"/>
+    <image id="x3o46j" name="UnitFrame_Main_Role_Background.png" path="/Resources/HUD/Unit Frames/Main/Role/"/>
+    <image id="x3o46k" name="UnitFrame_Main_Level_Background.png" path="/Resources/HUD/Unit Frames/Main/Level/"/>
+    <image id="x3o46l" name="UnitFrame_Main_CP_Frame.png" path="/Resources/HUD/Unit Frames/Main/Combo Points/"/>
+    <image id="x3o46m" name="UnitFrame_Main_CP_Fill.png" path="/Resources/HUD/Unit Frames/Main/Combo Points/"/>
+    <image id="x3o46n" name="UnitFrame_Main_Bar_Secondary_Fill.png" path="/Resources/HUD/Unit Frames/Main/Bars/"/>
+    <image id="x3o46o" name="UnitFrame_Main_Bar_Primary_Fill.png" path="/Resources/HUD/Unit Frames/Main/Bars/"/>
+    <image id="x3o46p" name="UnitFrame_Main_Avatar_TR_Fill.png" path="/Resources/HUD/Unit Frames/Main/Avatar/"/>
+    <image id="x3o46q" name="UnitFrame_Main_Level_Skull.png" path="/Resources/HUD/Unit Frames/Main/Level/"/>
+    <image id="x3o46r" name="ActionBar_ExtraSlot_Background.png" path="/Resources/HUD/Action Bar/Slots/"/>
+    <image id="x3o46s" name="Minimap_Zoom_Plus.png" path="/Resources/HUD/Minimap/Zoom Buttons/"/>
+    <image id="x3o46t" name="Minimap_Pin_Unit_Red.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o46u" name="XPTooltip_Background_Arrow.png" path="/Resources/HUD/Action Bar/XP Tooltip/"/>
+    <image id="x3o46v" name="XPTooltip_Background_Middle.png" path="/Resources/HUD/Action Bar/XP Tooltip/"/>
+    <image id="x3o46w" name="XPTooltip_Background_Side.png" path="/Resources/HUD/Action Bar/XP Tooltip/"/>
+    <image id="x3o46x" name="CastBar_Background.png" path="/Resources/HUD/Cast Bars/"/>
+    <image id="x3o46y" name="CastBar_Fill_Big.png" path="/Resources/HUD/Cast Bars/"/>
+    <image id="x3o46z" name="CastBar_Fill_Small.png" path="/Resources/HUD/Cast Bars/"/>
+    <image id="x3o470" name="CastBar_Icon_Frame.png" path="/Resources/HUD/Cast Bars/"/>
+    <image id="x3o471" name="Chat_Background.png" path="/Resources/HUD/Chat/"/>
+    <image id="x3o472" name="Chat_Input_Background.png" path="/Resources/HUD/Chat/"/>
+    <image id="x3o473" name="Chat_Submit.png" path="/Resources/HUD/Chat/"/>
+    <image id="x3o474" name="Chat_Border_Vertical.png" path="/Resources/HUD/Chat/Border/"/>
+    <image id="x3o475" name="Chat_Border_Vertical_Arrow.png" path="/Resources/HUD/Chat/Border/"/>
+    <image id="x3o476" name="Chat_Border_Vertical_Arrow_Fill.png" path="/Resources/HUD/Chat/Border/"/>
+    <image id="x3o477" name="Bottom.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o478" name="Down.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o479" name="Lock.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o47a" name="Settings.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o47b" name="Minimap_Pin_Unit_Purple.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o47c" name="Minimap_Pin_Unit_Orange.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o47d" name="Minimap_Pin_Unit_Green.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o47e" name="Minimap_Pin_Boss_Dead.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o47f" name="Minimap_Pin_Boss.png" path="/Resources/HUD/Minimap/Pins/"/>
+    <image id="x3o47g" name="Minimap_Tribal_Fill.png" path="/Resources/HUD/Minimap/"/>
+    <image id="x3o47h" name="Minimap_Zoom_Minus.png" path="/Resources/HUD/Minimap/Zoom Buttons/"/>
+    <image id="x3o47i" name="Minimap_Tribal_Backgroung.png" path="/Resources/HUD/Minimap/"/>
+    <image id="x3o47j" name="Minimap_Background.png" path="/Resources/HUD/Minimap/"/>
+    <image id="x3o47k" name="Chat_Tab_Background.png" path="/Resources/HUD/Chat/Tabs/"/>
+    <image id="x3o47l" name="Chat_Tab_Active_Overlay.png" path="/Resources/HUD/Chat/Tabs/"/>
+    <image id="x3o47m" name="Chat_Tab_Active_Arrow.png" path="/Resources/HUD/Chat/Tabs/"/>
+    <image id="x3o47n" name="Up.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o47o" name="Top.png" path="/Resources/HUD/Chat/Icons/"/>
+    <image id="x3o47p" name="Minimap_Overlay.png" path="/Resources/HUD/Minimap/"/>
+    <image id="x3o47q" name="Window_Tabs_Bar_Background_Side.png" path="/Resources/Windows/Window/Tabs/Bar/"/>
+    <component id="x3o47r" name="ComInputFieldBackGround.xml" path="/Component/"/>
+    <component id="x3o47s" name="ComButton.xml" path="/Component/"/>
+  </resources>
+  <publish name="" genCode="true"/>
+</packageDescription>
