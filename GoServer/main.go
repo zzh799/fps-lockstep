@@ -1,9 +1,13 @@
 package main
 
 import (
+	"GoServer/manager"
+	"GoServer/model"
+	"GoServer/pb"
 	"fmt"
 	"github.com/fwhezfwhez/errorx"
 	"github.com/xtaci/kcp-go"
+	"google.golang.org/protobuf/proto"
 	"io"
 	"net"
 )
@@ -37,11 +41,40 @@ func OnReceive(conn net.Conn) {
 			fmt.Println(errorx.Wrap(e))
 			break
 		}
-		conn.Write(buffer[:n])
-		fmt.Println("receive from client:", buffer[:n])
 
-		//request := &pb.Request{}
-		//proto.Unmarshal(buffer[:n], request)
-		//request.ProtoReflect().WhichOneof()
+		message := &pb.Message{}
+		err := proto.Unmarshal(buffer[:n], message)
+		if err != nil {
+			return
+		}
+		if message.GetRequest() != nil {
+			userLogin := message.GetRequest().GetUserLogin()
+			if userLogin != nil {
+				userManager := manager.GetInstance()
+				_, ok := userManager.Users[userLogin.UserName]
+				if ok {
+					return
+				}
+
+				userManager.Add(model.User{userLogin.UserName, userLogin.Password})
+
+				responseMessage := &pb.Message{
+					Response: &pb.Response{
+						UserLogin: &pb.UserLoginResponse{
+							Result: &pb.Result{
+								Success: true,
+							},
+						},
+					},
+				}
+				marshal, e := proto.Marshal(responseMessage)
+				if e != nil {
+					conn.Write(marshal)
+					fmt.Println("receive from client:", buffer[:n])
+				}
+
+			}
+		}
+		//message.ProtoReflect().WhichOneof()
 	}
 }
