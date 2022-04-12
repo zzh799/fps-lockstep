@@ -281,7 +281,7 @@
     <image id="x3o47p" name="Minimap_Overlay.png" path="/Resources/HUD/Minimap/"/>
     <image id="x3o47q" name="Window_Tabs_Bar_Background_Side.png" path="/Resources/Windows/Window/Tabs/Bar/"/>
     <component id="x3o47r" name="ComInputFieldBackGround.xml" path="/Component/"/>
-    <component id="x3o47s" name="ComButton.xml" path="/Component/"/>
+    <component id="x3o47s" name="ComButton.xml" path="/Component/" exported="true"/>
   </resources>
   <publish name="" genCode="true"/>
 </packageDescription>

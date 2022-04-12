@@ -1,7 +1,7 @@
 ﻿using System.Net;
+using UnityEngine;
 
-namespace Network
-{
+
 	public static class NetworkHelper
 	{
 		public static IPEndPoint ToIPEndPoint(string host, int port)
@@ -17,5 +17,21 @@ namespace Network
 			int port = int.Parse(p);
 			return ToIPEndPoint(host, port);
 		}
+		
+		/// <summary>
+		/// 网络可用
+		/// </summary>
+		public static bool NetAvailable
+		{
+			get { return Application.internetReachability != NetworkReachability.NotReachable; }
+		}
+
+		/// <summary>
+		/// 是否是无线
+		/// </summary>
+		public static bool IsWifi
+		{
+			get { return Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork; }
+		}
 	}
-}
+
