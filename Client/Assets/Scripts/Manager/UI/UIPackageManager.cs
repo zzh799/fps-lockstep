@@ -13,7 +13,7 @@ public class UIPackageManager:Singleton<UIPackageManager>
     //全局UI包引用计数
     private static Dictionary<string, int> _packageRefs = new Dictionary<string, int>();
 
-    public static void AddPackage(string fileName,bool hasRes=true)
+    public static void LoadPackage(string fileName,bool hasRes = true)
     {
         if (AppConst.AssetBundleMode)
         {
