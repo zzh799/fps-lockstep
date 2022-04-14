@@ -1,31 +1,29 @@
 using FairyGUI;
 
-namespace Manager
+
+public abstract class BaseWindow : Window
 {
-    public abstract class BaseWindow : Window
+    private WindowDefine Define;
+
+    protected BaseWindow(WindowDefine define)
     {
-        private WindowDefine Define;
+        Define = define;
+        UIPackage.AddPackage("UI/" + define.packckageName);
+    }
 
-        protected BaseWindow(WindowDefine define)
-        {
-            Define = define;
-            AddUISource(new AssetBundleUISource(Define.packckageName));
-        }
-        
-        protected override void OnInit()
-        {
-            base.OnInit();
-            contentPane = UIPackage.CreateObject(Define.packckageName, Define.resName).asCom;
-        }
+    protected override void OnInit()
+    {
+        base.OnInit();
+        contentPane = UIPackage.CreateObject(Define.packckageName, Define.resName).asCom;
+    }
 
-        protected override void OnHide()
+    protected override void OnHide()
+    {
+        base.OnHide();
+        if (!Define.Cache)
         {
-            base.OnHide();
-            if (!Define.Cache)
-            {
-                Define.Instance = null;
-                Dispose();
-            }
+            Define.Instance = null;
+            Dispose();
         }
     }
 }
