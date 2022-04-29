@@ -3,15 +3,20 @@ module GoServer
 go 1.18
 
 require (
-	github.com/fwhezfwhez/errorx v1.1.0
 	github.com/xtaci/kcp-go v5.4.20+incompatible
 	google.golang.org/protobuf v1.23.0
+	gorm.io/driver/mysql v1.3.3
+	gorm.io/driver/sqlite v1.3.2
+	gorm.io/gorm v1.23.5
 )
 
 require (
-	github.com/gofrs/uuid v4.0.0+incompatible // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.12 // indirect
 	github.com/klauspost/reedsolomon v1.9.16 // indirect
+	github.com/mattn/go-sqlite3 v1.14.12 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
 	github.com/templexxx/xor v0.0.0-20191217153810-f85b25db303b // indirect

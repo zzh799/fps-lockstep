@@ -681,7 +681,7 @@ namespace Network
 					return;
 				}
 			}
-
+			
 			ushort size = (ushort)(stream.Length - stream.Position);
 			byte[] bytes = stream.GetBuffer();
 			Send(bytes, 0, size);

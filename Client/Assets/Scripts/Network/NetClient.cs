@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NetClient : MonoSingleton<NetClient>
 {
-    private string address = "127.0.0.1:13145";
+    private string address = "127.0.0.1:7777";
 //    private string address = "10.200.10.192:3655";
 
     public static long starttime = 0;
