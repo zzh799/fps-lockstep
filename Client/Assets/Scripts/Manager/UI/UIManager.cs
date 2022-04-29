@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using basic;
 using Common;
+using FairyGUI;
 
 public class WindowDefine
 {
@@ -22,6 +24,7 @@ public class UIManager : Singleton<UIManager>
     {
         _WindowDefines.Add(typeof(T),
             new WindowDefine() {packckageName = packageName, resName = resName, Cache = false});
+        UIPackage.AddPackage("UI/" + packageName);
     }
 
     public T Show<T>() where T : BaseWindow, new()
@@ -32,6 +35,7 @@ public class UIManager : Singleton<UIManager>
             if (info.Instance == null)
             {
                 info.Instance = new T();
+                info.Instance.SetInfo(info);
             }
 
             info.Instance.Show();

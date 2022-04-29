@@ -5,10 +5,14 @@ public abstract class BaseWindow : Window
 {
     private WindowDefine Define;
 
-    protected BaseWindow(WindowDefine define)
+    protected BaseWindow()
     {
-        Define = define;
-        UIPackage.AddPackage("UI/" + define.packckageName);
+      
+    }
+
+    public void SetInfo(WindowDefine info)
+    {
+        Define = info;
     }
 
     protected override void OnInit()
