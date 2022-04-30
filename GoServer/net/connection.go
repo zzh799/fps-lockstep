@@ -86,6 +86,15 @@ func (c *NetConnection) StartReader() {
 
 		if n > 0 {
 			data := headData[:n]
+			if data[0] == 101 {
+				_, err := c.GetConnection().Write(data)
+				if err != nil {
+					continue
+				}
+
+				continue
+			}
+
 			message := &pb.Message{}
 			err := proto.Unmarshal(data, message)
 			if err != nil {
@@ -175,7 +184,10 @@ func (c *NetConnection) Stop() {
 	c.Server.CallOnConnStop(c)
 
 	// 关闭socket链接
-	c.Connection.Close()
+	err := c.Connection.Close()
+	if err != nil {
+		return
+	}
 	//关闭Writer Goroutine
 	c.ExitBuffChan <- true
 

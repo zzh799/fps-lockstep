@@ -85,7 +85,20 @@ func (u *UserRegisterRequestRouter) Handle(request iface.IRequest, message proto
 	}
 }
 
-func init() {
+func (s *UserService) Init() {
+
 	manager.GetGMInstance().Server.AddRouter("UserLoginRequest", &UserLoginRequestRouter{})
 	manager.GetGMInstance().Server.AddRouter("UserRegisterRequest", &UserRegisterRequestRouter{})
+}
+
+type UserService struct {
+}
+
+var userService *UserService
+
+func GetUserService() *UserService {
+	if userService == nil {
+		userService = &UserService{}
+	}
+	return userService
 }
