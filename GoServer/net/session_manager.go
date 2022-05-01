@@ -7,25 +7,21 @@ import (
 	"sync"
 )
 
-/*
-	连接管理模块
-*/
+// SessionManager 连接管理模块
 type SessionManager struct {
-	connections map[uint32]iface.IConnection //管理的连接信息
-	connLock    sync.RWMutex                 //读写连接的读写锁
+	connections map[uint32]iface.ISession //管理的连接信息
+	connLock    sync.RWMutex              //读写连接的读写锁
 }
 
-/*
-	创建一个链接管理
-*/
-func NewConnManager() *SessionManager {
+// NewSessionManager 创建一个链接管理
+func NewSessionManager() *SessionManager {
 	return &SessionManager{
-		connections: make(map[uint32]iface.IConnection),
+		connections: make(map[uint32]iface.ISession),
 	}
 }
 
-//添加链接
-func (sessionMgr *SessionManager) Add(conn iface.IConnection) {
+// Add 添加链接
+func (sessionMgr *SessionManager) Add(conn iface.ISession) {
 	//保护共享资源Map 加写锁
 	sessionMgr.connLock.Lock()
 	defer sessionMgr.connLock.Unlock()
@@ -33,11 +29,11 @@ func (sessionMgr *SessionManager) Add(conn iface.IConnection) {
 	//将conn连接添加到ConnMananger中
 	sessionMgr.connections[conn.GetConnID()] = conn
 
-	fmt.Println("connection add to SessionManager successfully: conn num = ", sessionMgr.Len())
+	fmt.Println("connection add to SessionManager successfully: session num = ", sessionMgr.Len())
 }
 
-//删除连接
-func (sessionMgr *SessionManager) Remove(conn iface.IConnection) {
+// Remove 删除连接
+func (sessionMgr *SessionManager) Remove(conn iface.ISession) {
 	//保护共享资源Map 加写锁
 	sessionMgr.connLock.Lock()
 	defer sessionMgr.connLock.Unlock()
@@ -45,11 +41,11 @@ func (sessionMgr *SessionManager) Remove(conn iface.IConnection) {
 	//删除连接信息
 	delete(sessionMgr.connections, conn.GetConnID())
 
-	fmt.Println("connection Remove ConnectionID=", conn.GetConnID(), " successfully: conn num = ", sessionMgr.Len())
+	fmt.Println("connection Remove ConnectionID=", conn.GetConnID(), " successfully: session num = ", sessionMgr.Len())
 }
 
-//利用ConnID获取链接
-func (sessionMgr *SessionManager) Get(connID uint32) (iface.IConnection, error) {
+// Get 利用ConnID获取链接
+func (sessionMgr *SessionManager) Get(connID uint32) (iface.ISession, error) {
 	//保护共享资源Map 加读锁
 	sessionMgr.connLock.RLock()
 	defer sessionMgr.connLock.RUnlock()
@@ -61,13 +57,13 @@ func (sessionMgr *SessionManager) Get(connID uint32) (iface.IConnection, error) 
 	}
 }
 
-//获取当前连接
+// Len 获取当前连接
 func (sessionMgr *SessionManager) Len() int {
 	return len(sessionMgr.connections)
 }
 
-//清除并停止所有连接
-func (sessionMgr *SessionManager) ClearConn() {
+// ClearConn 清除并停止所有连接
+func (sessionMgr *SessionManager) Clear() {
 	//保护共享资源Map 加写锁
 	sessionMgr.connLock.Lock()
 	defer sessionMgr.connLock.Unlock()
@@ -80,5 +76,5 @@ func (sessionMgr *SessionManager) ClearConn() {
 		delete(sessionMgr.connections, connID)
 	}
 
-	fmt.Println("Clear All Connections successfully: conn num = ", sessionMgr.Len())
+	fmt.Println("Clear All Connections successfully: session num = ", sessionMgr.Len())
 }

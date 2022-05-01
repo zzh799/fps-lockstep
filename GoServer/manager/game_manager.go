@@ -8,11 +8,6 @@ type GameManager struct {
 	Server iface.IServer
 }
 
-var gameManager *GameManager
+func (gameMgr *GameManager) Init() {
 
-func GetGMInstance() *GameManager {
-	if gameManager == nil {
-		gameManager = &GameManager{}
-	}
-	return gameManager
 }

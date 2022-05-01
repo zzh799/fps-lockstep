@@ -9,8 +9,8 @@ import (
 
 func main() {
 	utils.ConfigInstance.Reload()
-	manager.GetGMInstance().Server = net.NewServer()
-	service.GetUserService().Init()
-
-	manager.GetGMInstance().Server.Serve()
+	gameMgr := utils.GetInstance[*manager.GameManager]()
+	gameMgr.Server = net.NewServer()
+	utils.GetInstance[*service.UserService]().Init()
+	gameMgr.Server.Serve()
 }

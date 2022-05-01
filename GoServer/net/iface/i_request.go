@@ -1,10 +1,10 @@
 package iface
 
 import (
-	"google.golang.org/protobuf/proto"
+	"GoServer/pb"
 )
 
 type IRequest interface {
-	GetConnection() IConnection //获取请求连接信息
-	GetData() proto.Message
+	GetSession() ISession //获取请求连接信息
+	GetMessage() *pb.Message
 }

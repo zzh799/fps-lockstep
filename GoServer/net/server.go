@@ -1,9 +1,8 @@
 package net
 
 import (
-	iface2 "GoServer/net/iface"
+	"GoServer/net/iface"
 	"GoServer/utils"
-	"errors"
 	"fmt"
 	"github.com/xtaci/kcp-go"
 	"google.golang.org/protobuf/reflect/protoreflect"
@@ -14,26 +13,26 @@ import (
 type Server struct {
 	Name       string
 	Host       net.Addr
-	msgHandler iface2.IMessageDistributer //当前Server的消息管理模块，用来绑定MsgId和对应的处理方法
-	ConnMgr    iface2.IConnectionManager  //当前Server的链接管理器
+	msgHandler iface.IMessageDistributer //当前Server的消息管理模块，用来绑定MsgId和对应的处理方法
+	SessionMgr iface.ISessionManager     //当前Server的链接管理器
 	//该Server的连接创建时Hook函数
-	OnConnStart func(conn iface2.IConnection)
+	OnConnStart func(conn iface.ISession)
 	//该Server的连接断开时的Hook函数
-	OnConnStop func(conn iface2.IConnection)
+	OnConnStop func(conn iface.ISession)
 }
 
 // SetOnConnStart 设置该Server的连接创建时Hook函数
-func (s *Server) SetOnConnStart(hookFunc func(iface2.IConnection)) {
+func (s *Server) SetOnConnStart(hookFunc func(iface.ISession)) {
 	s.OnConnStart = hookFunc
 }
 
 // SetOnConnStop 设置该Server的连接断开时的Hook函数
-func (s *Server) SetOnConnStop(hookFunc func(iface2.IConnection)) {
+func (s *Server) SetOnConnStop(hookFunc func(iface.ISession)) {
 	s.OnConnStop = hookFunc
 }
 
 // CallOnConnStart 调用连接OnConnStart Hook函数
-func (s *Server) CallOnConnStart(conn iface2.IConnection) {
+func (s *Server) CallOnConnStart(conn iface.ISession) {
 	if s.OnConnStart != nil {
 		fmt.Println("---> CallOnConnStart....")
 		s.OnConnStart(conn)
@@ -41,29 +40,19 @@ func (s *Server) CallOnConnStart(conn iface2.IConnection) {
 }
 
 // CallOnConnStop 调用连接OnConnStop Hook函数
-func (s *Server) CallOnConnStop(conn iface2.IConnection) {
+func (s *Server) CallOnConnStop(conn iface.ISession) {
 	if s.OnConnStop != nil {
 		fmt.Println("---> CallOnConnStop....")
 		s.OnConnStop(conn)
 	}
 }
 
-func (s *Server) GetConnMgr() iface2.IConnectionManager {
-	return s.ConnMgr
+func (s *Server) GetSessionMgr() iface.ISessionManager {
+	return s.SessionMgr
 }
 
-func (s *Server) AddRouter(msgId protoreflect.Name, router iface2.IRouter) {
+func (s *Server) AddRouter(msgId protoreflect.Message, router iface.IRouter) {
 	s.msgHandler.AddRouter(msgId, router)
-}
-
-func CallBackToClient(conn net.Conn, data []byte, cnt int) error {
-	//Send back
-	cnt, err := conn.Write(data[:cnt])
-	if err != nil {
-		fmt.Println("write back buf err ", err)
-		return errors.New("CallBackToClient error")
-	}
-	return nil
 }
 
 func (s *Server) Start() {
@@ -99,8 +88,11 @@ func (s *Server) Start() {
 			}
 
 			//3.2 设置服务器最大连接控制,如果超过最大连接，那么则关闭此新的连接
-			if s.ConnMgr.Len() >= utils.ConfigInstance.MaxConn {
-				conn.Close()
+			if s.SessionMgr.Len() >= utils.ConfigInstance.MaxConn {
+				err := conn.Close()
+				if err != nil {
+					continue
+				}
 				continue
 			}
 
@@ -115,7 +107,7 @@ func (s *Server) Start() {
 func (s *Server) Stop() {
 	fmt.Println("[STOP] Zinx-kcp server , name ", s.Name)
 	// Server.Stop() 将其他需要清理的连接信息或者其他信息 也要一并停止或者清理
-	s.ConnMgr.ClearConn()
+	s.SessionMgr.Clear()
 
 }
 
@@ -128,7 +120,7 @@ func (s Server) Serve() {
 	}
 }
 
-func NewServer() iface2.IServer {
+func NewServer() iface.IServer {
 	s := &Server{
 		Name: utils.ConfigInstance.Name,
 		Host: &net.UDPAddr{
@@ -136,7 +128,7 @@ func NewServer() iface2.IServer {
 			Port: utils.ConfigInstance.Port,
 		},
 		msgHandler: NewMsgHandle(),
-		ConnMgr:    NewConnManager(), //创建ConnManager
+		SessionMgr: NewSessionManager(), //创建ConnManager
 	}
 	return s
 }

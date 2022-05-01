@@ -6,9 +6,13 @@ import (
 	"GoServer/net"
 	"GoServer/net/iface"
 	"GoServer/pb"
+	"GoServer/utils"
 	"fmt"
 	"google.golang.org/protobuf/proto"
 )
+
+type UserService struct {
+}
 
 type UserLoginRequestRouter struct {
 	net.BaseRouter
@@ -18,19 +22,17 @@ type UserRegisterRequestRouter struct {
 	net.BaseRouter
 }
 
-func (u *UserLoginRequestRouter) Handle(request iface.IRequest, message proto.Message) {
+func (u *UserLoginRequestRouter) Handle(sender iface.ISession, message proto.Message) {
 	userLoginRequest := message.(*pb.UserLoginRequest)
-
-	outMessage := &pb.Message{
-		Response: &pb.Response{
-			UserLogin: &pb.UserLoginResponse{
-				Result: &pb.Result{},
-			},
+	outMessage := sender.GetRspMessage()
+	outMessage.Response = &pb.Response{
+		UserLogin: &pb.UserLoginResponse{
+			Result: &pb.Result{},
 		},
 	}
 
 	var user *model.User
-	manager.GetDBMgrInstance().DB.First(user, "username = ?", userLoginRequest.UserName)
+	utils.GetInstance[*manager.DBManager]().DB.First(user, "username = ?", userLoginRequest.UserName)
 	if user == nil {
 		fmt.Println("UserService:Can't Find User named,user:" + userLoginRequest.UserName)
 		outMessage.Response.UserLogin.Result.Success = false
@@ -43,29 +45,28 @@ func (u *UserLoginRequestRouter) Handle(request iface.IRequest, message proto.Me
 
 	} else {
 		fmt.Println("UserService:User Login Success,user:" + userLoginRequest.UserName)
-		request.GetConnection().SetProperty("user", user)
+		sender.SetProperty("user", user)
 		outMessage.Response.UserLogin.Result.Success = true
 	}
 
-	err := request.GetConnection().SendMsg(outMessage)
+	err := sender.SendMsg()
 	if err != nil {
 		return
 	}
 }
 
-func (u *UserRegisterRequestRouter) Handle(request iface.IRequest, message proto.Message) {
+func (u *UserRegisterRequestRouter) Handle(sender iface.ISession, message proto.Message) {
 	userRegisterRequest := message.(*pb.UserRegisterRequest)
 
-	outMessage := &pb.Message{
-		Response: &pb.Response{
-			UserRegister: &pb.UserRegisterResponse{
-				Result: &pb.Result{},
-			},
+	outMessage := sender.GetRspMessage()
+	outMessage.Response = &pb.Response{
+		UserRegister: &pb.UserRegisterResponse{
+			Result: &pb.Result{},
 		},
 	}
 
 	var user *model.User
-	manager.GetDBMgrInstance().DB.First(user, "username = ?", userRegisterRequest.UserName)
+	utils.GetInstance[*manager.DBManager]().DB.First(user, "username = ?", userRegisterRequest.UserName)
 
 	if user != nil {
 		fmt.Println("UserService:Can't Find User named,user:" + userRegisterRequest.UserName)
@@ -75,30 +76,18 @@ func (u *UserRegisterRequestRouter) Handle(request iface.IRequest, message proto
 		user = &model.User{}
 		user.UserName = userRegisterRequest.UserName
 		user.Password = userRegisterRequest.Password
-		manager.GetDBMgrInstance().DB.Create(user)
+		utils.GetInstance[*manager.DBManager]().DB.Create(user)
 		outMessage.Response.UserRegister.Result.Success = true
 	}
 
-	err := request.GetConnection().SendMsg(outMessage)
+	err := sender.SendMsg()
 	if err != nil {
 		return
 	}
 }
 
 func (s *UserService) Init() {
-
-	manager.GetGMInstance().Server.AddRouter("UserLoginRequest", &UserLoginRequestRouter{})
-	manager.GetGMInstance().Server.AddRouter("UserRegisterRequest", &UserRegisterRequestRouter{})
-}
-
-type UserService struct {
-}
-
-var userService *UserService
-
-func GetUserService() *UserService {
-	if userService == nil {
-		userService = &UserService{}
-	}
-	return userService
+	gameMgr := utils.GetInstance[*manager.GameManager]()
+	gameMgr.Server.AddRouter((&pb.UserLoginRequest{}).ProtoReflect(), &UserLoginRequestRouter{})
+	gameMgr.Server.AddRouter((&pb.UserRegisterRequest{}).ProtoReflect(), &UserRegisterRequestRouter{})
 }

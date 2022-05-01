@@ -8,30 +8,20 @@ type UserManager struct {
 	Users map[string]model.User
 }
 
-var instance *UserManager
-
-func GetInstance() *UserManager {
-	if instance == nil {
-		instance = New()
-	}
-	return instance
+func (userMgr *UserManager) Init() {
+	userMgr.Users = make(map[string]model.User)
 }
 
-func New() *UserManager {
-	r := &UserManager{Users: make(map[string]model.User)}
-	return r
-}
-
-func (m UserManager) Add(user model.User) {
-	_, ok := m.Users[user.UserName]
+func (userMgr UserManager) Add(user model.User) {
+	_, ok := userMgr.Users[user.UserName]
 	if !ok {
-		m.Users[user.UserName] = user
+		userMgr.Users[user.UserName] = user
 	}
 }
 
-func (m UserManager) Del(user model.User) {
-	_, ok := m.Users[user.UserName]
+func (userMgr UserManager) Del(user model.User) {
+	_, ok := userMgr.Users[user.UserName]
 	if !ok {
-		delete(m.Users, user.UserName)
+		delete(userMgr.Users, user.UserName)
 	}
 }

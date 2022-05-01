@@ -2,18 +2,18 @@ package net
 
 import (
 	"GoServer/net/iface"
-	"google.golang.org/protobuf/proto"
+	"GoServer/pb"
 )
 
 type Request struct {
-	conn iface.IConnection //已经和客户端建立好的 链接
-	msg  proto.Message     //客户端请求的数据
+	session iface.ISession //已经和客户端建立好的 链接
+	message *pb.Message    //客户端请求的数据
 }
 
-func (r *Request) GetConnection() iface.IConnection {
-	return r.conn
+func (r *Request) GetSession() iface.ISession {
+	return r.session
 }
 
-func (r *Request) GetData() proto.Message {
-	return r.msg
+func (r *Request) GetMessage() *pb.Message {
+	return r.message
 }
