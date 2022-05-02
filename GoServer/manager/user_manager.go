@@ -13,15 +13,15 @@ func (userMgr *UserManager) Init() {
 }
 
 func (userMgr UserManager) Add(user model.User) {
-	_, ok := userMgr.Users[user.UserName]
+	_, ok := userMgr.Users[user.Username]
 	if !ok {
-		userMgr.Users[user.UserName] = user
+		userMgr.Users[user.Username] = user
 	}
 }
 
 func (userMgr UserManager) Del(user model.User) {
-	_, ok := userMgr.Users[user.UserName]
+	_, ok := userMgr.Users[user.Username]
 	if !ok {
-		delete(userMgr.Users, user.UserName)
+		delete(userMgr.Users, user.Username)
 	}
 }

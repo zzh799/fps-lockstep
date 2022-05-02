@@ -9,8 +9,8 @@ import (
 
 func main() {
 	utils.ConfigInstance.Reload()
-	gameMgr := utils.GetInstance[*manager.GameManager]()
+	gameMgr := utils.GetInstance[manager.GameManager]()
 	gameMgr.Server = net.NewServer()
-	utils.GetInstance[*service.UserService]().Init()
+	utils.GetInstance[service.UserService]().RegisterRouter()
 	gameMgr.Server.Serve()
 }

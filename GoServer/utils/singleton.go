@@ -12,15 +12,18 @@ type Singleton interface {
 var cache sync.Map
 
 // GetInstance returns a singleton of T.
-func GetInstance[T Singleton]() (t T) {
+func GetInstance[T any]() (t *T) {
 	hash := reflect.TypeOf(t)
 	v, ok := cache.Load(hash)
 
 	if ok {
-		return v.(T)
+		return v.(*T)
 	}
+	v = new(T)
 	v, _ = cache.LoadOrStore(hash, v)
-	instance := v.(T)
+
+	instance := v.(Singleton)
 	instance.Init()
-	return instance
+
+	return v.(*T)
 }

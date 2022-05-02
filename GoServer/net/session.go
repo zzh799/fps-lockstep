@@ -26,7 +26,7 @@ type Session struct {
 }
 
 func (c *Session) GetRspMessage() *pb.Message {
-	if c.rspMsg != nil {
+	if c.rspMsg == nil {
 		c.rspMsg = &pb.Message{}
 	}
 	return c.rspMsg

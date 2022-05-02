@@ -31,22 +31,28 @@ func (u *UserLoginRequestRouter) Handle(sender iface.ISession, message proto.Mes
 		},
 	}
 
-	var user *model.User
-	utils.GetInstance[*manager.DBManager]().DB.First(user, "username = ?", userLoginRequest.UserName)
-	if user == nil {
-		fmt.Println("UserService:Can't Find User named,user:" + userLoginRequest.UserName)
-		outMessage.Response.UserLogin.Result.Success = false
-		outMessage.Response.UserLogin.Result.Error = "no user"
+	var user model.User
+	result := utils.GetInstance[manager.DBManager]().DB.First(&user, "username = ?", userLoginRequest.UserName)
+	if result.Error == nil {
+		//if user == nil {
+		//	fmt.Println("UserService:Can't Find User named,user:" + userLoginRequest.UserName)
+		//	outMessage.Response.UserLogin.Result.Success = false
+		//	outMessage.Response.UserLogin.Result.Error = "no user"
+		//
+		//} else
+		if user.Password != userLoginRequest.Password {
+			fmt.Println("UserService:User Password no match,user:" + userLoginRequest.UserName)
+			outMessage.Response.UserLogin.Result.Success = false
+			outMessage.Response.UserLogin.Result.Error = "password error"
 
-	} else if user.Password != userLoginRequest.Password {
-		fmt.Println("UserService:User Password no match,user:" + userLoginRequest.UserName)
-		outMessage.Response.UserLogin.Result.Success = false
-		outMessage.Response.UserLogin.Result.Error = "password error"
-
+		} else {
+			fmt.Println("UserService:User Login Success,user:" + userLoginRequest.UserName)
+			sender.SetProperty("user", user)
+			outMessage.Response.UserLogin.Result.Success = true
+		}
 	} else {
-		fmt.Println("UserService:User Login Success,user:" + userLoginRequest.UserName)
-		sender.SetProperty("user", user)
-		outMessage.Response.UserLogin.Result.Success = true
+		outMessage.Response.UserLogin.Result.Success = false
+		outMessage.Response.UserLogin.Result.Error = result.Error.Error()
 	}
 
 	err := sender.SendMsg()
@@ -66,7 +72,8 @@ func (u *UserRegisterRequestRouter) Handle(sender iface.ISession, message proto.
 	}
 
 	var user *model.User
-	utils.GetInstance[*manager.DBManager]().DB.First(user, "username = ?", userRegisterRequest.UserName)
+	db := utils.GetInstance[manager.DBManager]().DB
+	db.First(user, "username = ?", userRegisterRequest.UserName)
 
 	if user != nil {
 		fmt.Println("UserService:Can't Find User named,user:" + userRegisterRequest.UserName)
@@ -74,10 +81,16 @@ func (u *UserRegisterRequestRouter) Handle(sender iface.ISession, message proto.
 		outMessage.Response.UserRegister.Result.Error = "already has user"
 	} else {
 		user = &model.User{}
-		user.UserName = userRegisterRequest.UserName
+		user.Username = userRegisterRequest.UserName
 		user.Password = userRegisterRequest.Password
-		utils.GetInstance[*manager.DBManager]().DB.Create(user)
-		outMessage.Response.UserRegister.Result.Success = true
+		result := db.Create(user)
+		if result.Error != nil {
+			outMessage.Response.UserRegister.Result.Success = false
+		} else {
+			outMessage.Response.UserRegister.Result.Success = true
+
+		}
+
 	}
 
 	err := sender.SendMsg()
@@ -87,7 +100,11 @@ func (u *UserRegisterRequestRouter) Handle(sender iface.ISession, message proto.
 }
 
 func (s *UserService) Init() {
-	gameMgr := utils.GetInstance[*manager.GameManager]()
+
+}
+
+func (s *UserService) RegisterRouter() {
+	gameMgr := utils.GetInstance[manager.GameManager]()
 	gameMgr.Server.AddRouter((&pb.UserLoginRequest{}).ProtoReflect(), &UserLoginRequestRouter{})
 	gameMgr.Server.AddRouter((&pb.UserRegisterRequest{}).ProtoReflect(), &UserRegisterRequestRouter{})
 }
