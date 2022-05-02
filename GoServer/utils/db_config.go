@@ -16,7 +16,7 @@ func (c *DBConfig) Reload() {
 	if err != nil {
 		panic(err)
 	}
-	err = json.Unmarshal(bytes, &ConfigInstance)
+	err = json.Unmarshal(bytes, &DbConfigInstance)
 	if err != nil {
 		panic(err)
 	}
@@ -27,5 +27,5 @@ func init() {
 		Dsn: "root@tcp(127.0.0.1:3306)/lockstep?charset=utf8mb4&parseTime=True&loc=Local",
 	}
 
-	ConfigInstance.Reload()
+	DbConfigInstance.Reload()
 }

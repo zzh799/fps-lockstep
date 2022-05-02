@@ -101,7 +101,7 @@ namespace Network
 		{
 			memoryStream.Seek(0, SeekOrigin.Begin);
 			MessageDistributor<Session> distributor = MessageDistributor<Session>.Instance;
-			Message message = Message.Parser.ParseFrom(memoryStream.GetBuffer());
+			Message message = Message.Parser.ParseFrom(memoryStream);
 			distributor.ReceiveMessage(this, message);
 			distributor.Distribute();
 		}

@@ -6,6 +6,9 @@ namespace FairyGUI
     public delegate void EventCallback0();
     public delegate void EventCallback1(EventContext context);
 
+    public delegate void EventCallback2<T>(EventContext context, T message);
+
+
     /// <summary>
     /// 
     /// </summary>
@@ -35,6 +38,16 @@ namespace FairyGUI
         public void AddEventListener(string strType, EventCallback0 callback)
         {
             GetBridge(strType).Add(callback);
+        }
+
+        public void AddEventListener<T>(EventCallback2<T> callback)
+        {
+            string name = typeof(T).Name;
+            EventCallback1 eventCallback1 = (context) =>
+            {
+                callback(context, (T)context.data);
+            };
+            GetBridge(name).Add(eventCallback1);
         }
 
         /// <summary>
@@ -199,6 +212,7 @@ namespace FairyGUI
         {
             return InternalDispatchEvent(strType, null, data, initiator);
         }
+
 
         static InputEvent sCurrentInputEvent = new InputEvent();
 

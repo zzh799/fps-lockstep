@@ -1,5 +1,6 @@
 using FairyGUI;
 using FairyGUI.Utils;
+using Pb;
 using Service;
 using UnityEditor.UI;
 
@@ -7,14 +8,30 @@ namespace basic
 {
     public partial class WindowLogin : BaseWindow
     {
-        WndLogin content => (WndLogin) contentPane;
+        WndLogin content => (WndLogin)contentPane;
 
         protected override void OnInit()
         {
             base.OnInit();
-            // BindServiceEvent();
+
             BindUIEvent();
+            BindNetEvent();
         }
+        private void BindNetEvent()
+        {
+            AddEventListener<UserLoginResponse>(OnUserLogin);
+            AddEventListener<UserRegisterResponse>(OnUserRegister);
+        }
+        private void OnUserRegister(EventContext context, UserRegisterResponse message)
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        private void OnUserLogin(EventContext context, UserLoginResponse message)
+        {
+            throw new System.NotImplementedException();
+        }
+
 
         private void BindUIEvent()
         {

@@ -12,10 +12,15 @@ namespace Service
     {
         public UserService()
         {
+          
+        }
+
+        public void Init()
+        {
             MessageDistributor<Session>.Instance.Subscribe<UserLoginResponse>(OnUserLogin);
             MessageDistributor<Session>.Instance.Subscribe<UserRegisterResponse>(OnUserRegister);
         }
-        
+
         public void Dispose()
         {
             MessageDistributor<Session>.Instance.Unsubscribe<UserLoginResponse>(OnUserLogin);
@@ -43,6 +48,7 @@ namespace Service
         private void OnUserRegister(Session sender, UserRegisterResponse message)
         {
             Debug.Log("UserRegister:"+message.Result.Success);
+            EventHelper.BroadCastEvent(message);
         }
 
         public void UserRegister(string userName, string password)
@@ -64,7 +70,7 @@ namespace Service
         private void OnUserLogin(Session sender, UserLoginResponse message)
         {
             Debug.Log("UserLogin:"+message.Result.Success);
-
+            EventHelper.BroadCastEvent(message);
         }
 
 

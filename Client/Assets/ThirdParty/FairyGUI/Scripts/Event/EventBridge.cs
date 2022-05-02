@@ -16,6 +16,7 @@ namespace FairyGUI
         EventCallback1 _callback1;
         EventCallback1 _captureCallback;
         internal bool _dispatching;
+        private EventCallback2<object> _callback2;
 
         public EventBridge(EventDispatcher owner)
         {
@@ -49,6 +50,8 @@ namespace FairyGUI
             _callback0 -= callback;
             _callback0 += callback;
         }
+        
+        
 
         public void Remove(EventCallback0 callback)
         {
@@ -172,5 +175,6 @@ namespace FairyGUI
                 _dispatching = false;
             }
         }
+
     }
 }

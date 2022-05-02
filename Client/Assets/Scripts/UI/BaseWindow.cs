@@ -7,7 +7,7 @@ public abstract class BaseWindow : Window
 
     protected BaseWindow()
     {
-      
+
     }
 
     public void SetInfo(WindowDefine info)
@@ -30,4 +30,5 @@ public abstract class BaseWindow : Window
             Dispose();
         }
     }
+
 }

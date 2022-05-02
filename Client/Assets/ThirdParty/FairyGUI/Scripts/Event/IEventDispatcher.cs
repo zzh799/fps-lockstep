@@ -16,5 +16,7 @@ namespace FairyGUI
         bool DispatchEvent(string strType);
         bool DispatchEvent(string strType, object data);
         bool DispatchEvent(string strType, object data, object initiator);
+
+        void AddEventListener<T>(EventCallback2<T> callback);
     }
 }
