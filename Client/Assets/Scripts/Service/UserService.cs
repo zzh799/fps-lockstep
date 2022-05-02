@@ -36,8 +36,8 @@ namespace Service
                     }
                 }
             };
-            byte[] bytes = message.ToByteArray();
-            NetworkManager.Instance.Service.GetChannel().Send(new MemoryStream(bytes,0,bytes.Length,false,true));
+
+            NetworkManager.Instance.Session.Send(message);
         }
         
         private void OnUserRegister(Session sender, UserRegisterResponse message)
@@ -58,7 +58,7 @@ namespace Service
                     }
                 }
             };
-            NetworkManager.Instance.Service.GetChannel().Send(new MemoryStream(message.ToByteArray()));
+            NetworkManager.Instance.Session.Send(message);
         }
         
         private void OnUserLogin(Session sender, UserLoginResponse message)

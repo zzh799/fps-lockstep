@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using Google.Protobuf;
 using Pb;
 using UnityEngine;
 
@@ -9,7 +10,8 @@ namespace Network
 	public sealed class Session
 	{
 		private AChannel channel;
-		
+		private CodedOutputStream OutputStream;
+
 		public NetworkManager Network
 		{
 			get { return NetworkManager.Instance; }
@@ -129,6 +131,10 @@ namespace Network
 		public void Send(MemoryStream stream)
 		{
 			channel.Send(stream);
+		}
+		public void Send(Message message)
+		{
+			Send(message.ToByteArray());
 		}
 	}
 }
