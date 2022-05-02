@@ -21,9 +21,11 @@ func GetInstance[T any]() (t *T) {
 	}
 	v = new(T)
 	v, _ = cache.LoadOrStore(hash, v)
-
-	instance := v.(Singleton)
-	instance.Init()
+	_, b := hash.MethodByName("Init")
+	if b {
+		instance := v.(Singleton)
+		instance.Init()
+	}
 
 	return v.(*T)
 }

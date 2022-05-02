@@ -1,7 +1,9 @@
 package manager
 
 import (
+	"GoServer/model"
 	"GoServer/utils"
+	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -16,4 +18,16 @@ func (dbMgr *DBManager) Init() {
 		panic(err)
 	}
 	dbMgr.DB = db
+}
+
+func (dbMgr *DBManager) AutoMigrate() {
+	db := dbMgr.DB
+	E(db.AutoMigrate(&model.User{}))
+
+}
+
+func E(err error) {
+	if err != nil {
+		fmt.Println("DBManager->AutoMigrate->Error:" + err.Error())
+	}
 }
