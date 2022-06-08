@@ -2,6 +2,7 @@
 <component size="1024,768">
   <controller name="ctrlState" pages="0,login,1,register" selected="0"/>
   <displayList>
+    <component id="n14_pi02" name="FullWindow" src="pi027t" fileName="Component/ComFullWindow.xml" xy="5,-277" size="237,132" visible="false" touchable="false"/>
     <loader id="n1_x3o4" name="n1" xy="0,0" size="1024,768" url="ui://93tyfp33x3o45j" align="center" vAlign="middle" fill="scaleNoBorder">
       <relation target="" sidePair="width-width,height-height"/>
     </loader>

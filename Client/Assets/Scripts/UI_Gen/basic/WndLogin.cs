@@ -8,6 +8,7 @@ namespace basic
     public partial class WndLogin : GComponent
     {
         public Controller ctrlState;
+        public GComponent FullWindow;
         public GTextInput txtUserName;
         public GTextInput txtPassword;
         public GButton btnLogin;
@@ -27,6 +28,7 @@ namespace basic
             base.ConstructFromXML(xml);
 
             ctrlState = GetController("ctrlState");
+            FullWindow = (GComponent)GetChild("FullWindow");
             txtUserName = (GTextInput)GetChild("txtUserName");
             txtPassword = (GTextInput)GetChild("txtPassword");
             btnLogin = (GButton)GetChild("btnLogin");

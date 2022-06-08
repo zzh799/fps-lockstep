@@ -19,6 +19,16 @@ public abstract class BaseWindow : Window
     {
         base.OnInit();
         contentPane = UIPackage.CreateObject(Define.packckageName, Define.resName).asCom;
+
+        GObject fullWindow = contentPane.GetChild("FullWindow");
+        if (fullWindow!=null)
+        {
+            //设置全屏窗口
+            AddRelation(GRoot.inst, RelationType.Size);
+            x = (GRoot.inst.width - width) / 2;
+        }
+
+
     }
 
     protected override void OnHide()
