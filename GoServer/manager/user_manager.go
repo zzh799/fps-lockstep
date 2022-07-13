@@ -21,7 +21,7 @@ func (userMgr UserManager) Add(user model.User) {
 
 func (userMgr UserManager) Del(user model.User) {
 	_, ok := userMgr.Users[user.Username]
-	if !ok {
+	if ok {
 		delete(userMgr.Users, user.Username)
 	}
 }
