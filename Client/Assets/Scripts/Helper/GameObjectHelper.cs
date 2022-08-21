@@ -19,7 +19,7 @@ public class GameObjectHelper
     /// <summary>
     /// 搜索子物体组件-GameObject版
     /// </summary>
-    public static T Get<T>(GameObject go, string subnode) where T : Component
+    public static T Get<T>(UnityEngine.GameObject go, string subnode) where T : Component
     {
         if (go != null)
         {

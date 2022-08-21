@@ -8,4 +8,7 @@ public class AppConst
     public const string AssetDir = "StreamingAssets";           //素材目录        
     public const string PackageName = "com.liereal.lockstep";           //素材目录        
 
+    
+    public const float FrameTimeInterval = 0.03f; //帧时间间隔        
+    
 }
